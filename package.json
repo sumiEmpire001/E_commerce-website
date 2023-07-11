@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "my E_commas webites"
+  "repository": "https://github.com/sumiEmpire001/-my_portfolio.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "John Daramola",
   "license": "ISC"
