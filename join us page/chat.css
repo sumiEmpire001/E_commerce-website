@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-fluid {
+    background-color:#f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  
+  #users {
+    list-style-type: block;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #chat-messages {
+    margin-bottom: 10px;
+  }
+  
+  #chat-input .input-group {
+    margin-top: 10px;
+  }
+  

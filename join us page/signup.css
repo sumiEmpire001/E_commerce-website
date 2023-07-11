@@ -1,0 +1,86 @@
+body {
+  background-color: #6da3da;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 40px;
+}
+
+.card-title {
+  color: #2e3192;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-color: #2e3192;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #2e3192;
+  border-color: #2e3192;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+.btn-primary:hover {
+  background-color: #1f2166;
+  border-color: #1f2166;
+}
+
+.next-btn {
+  display: block;
+  margin-top: 20px;
+}
+
+.stage-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stage-number {
+  display: inline-block;
+  background-color: #565786;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.stage-number.active {
+  background-color: #2e3192;
+}
+
+.stage {
+  display: block;
+}

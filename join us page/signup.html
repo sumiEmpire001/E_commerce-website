@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">Welcome to an Empire</h1>
+            <form id="signup-form">
+              <div class="stage" id="stage-1">
+                <h3>Stage 1</h3>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                </div>
+                <button type="button" class="btn btn-primary next-btn">Next</button>
+              </div>
+              
+              <div class="stage" id="stage-2" style="display: none;">
+                <h3>Stage 2</h3>
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" class="form-control" id="dob" required>
+                </div>
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
+                </div>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+                </div>
+                <div class="form-group">
+                  <label for="postal">Postal Code</label>
+                  <input type="text" class="form-control" id="postal" placeholder="Enter your postal code" required>
+                </div>
+                <button type="button" class="btn btn-primary next-btn">Next</button>
+              </div>
+              
+              <div class="stage" id="stage-3" style="display: none;">
+                <h3>Stage 3</h3>
+                <div class="form-group">
+                  <label for="businessType">Type of Business</label>
+                  <input type="text" class="form-control" id="businessType" placeholder="Enter the type of your business" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="businessName" placeholder="Enter your business name">
+                </div>
+                <button type="button" class="btn btn-primary next-btn">Next</button>
+              </div>
+              
+              <div class="stage" id="stage-4" style="display: none;">
+                <h3>Stage 4</h3>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="agreeToTerms">
+                    <label class="form-check-label" for="agreeToTerms">I agree to the terms and conditions</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"> <a href="/join us page/signin.html"> Submit</a></button>
+              </div>
+              
+              <div class="stage-display">
+                <span class="stage-number">1</span>
+                <span class="stage-number">2</span>
+                <span class="stage-number">3</span>
+                <span class="stage-number">4</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/script.js"></script>
+</body>
+</html>

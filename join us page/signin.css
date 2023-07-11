@@ -1,0 +1,66 @@
+body {
+    background-color: #9eb6ce;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 8px 6px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+  }
+  
+  .card-body {
+    padding: 40px;
+  }
+  
+  .card-title {
+    color: #2e3192;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-color: #2e3192;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #2e3192;
+    border-color: #2e3192;
+    border-radius: 5px;
+    padding: 10px 30px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1f2166;
+    border-color: #1f2166;
+  }
+  
+  .signup-link {
+    color: #2e3192;
+    text-decoration: none;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  

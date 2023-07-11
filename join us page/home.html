@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Commerce Homepage</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="/index.html">An Empire</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/join us page/marketplace.html">market place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/join us page/chat.html">chat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BAS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Share Post Section -->
+  <section class="share-post">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <h2>Share a Post</h2>
+              <form id="post-form" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="post-type">Post Type:</label>
+                  <select class="form-control" id="post-type" name="post-type">
+                    <option value="video">Video</option>
+                    <option value="picture">Picture</option>
+                    <option value="article">Article</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="post-content">Post Content:</label>
+                  <textarea class="form-control" id="post-content" name="post-content" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="post-file">Upload File:</label>
+                  <input type="file" class="form-control-file" id="post-file" name="post-file">
+                </div>
+                <button type="submit" class="btn btn-primary">Share</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post Section -->
+  <section class="posts">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <h2>Recent Posts</h2>
+              <div id="post-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 E-Commerce Website. All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="footer-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
