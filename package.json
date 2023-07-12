@@ -1,8 +1,8 @@
 {
   "name": "@sumiEmpire001/e_commas_site",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Welcome to Anempire, the epitome of e-commerce excellence and the gateway to a limitless shopping experience. Just as empires rise and dominate the world, Anempire is poised to ascend to greatness in the realm of online shopping. Our vision transcends traditional boundaries, empowering customers and revolutionizing the way we engage with products and services.",
-  "main": "index.html",
+  "main": "index.html", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
