@@ -116,8 +116,8 @@ h1 {
   height: 100%;
   z-index: -1;
   background: linear-gradient(1deg, #f43131, #f18304, #264588, #4e5c1a, #b1584f, #632e2e, #144441, #4b0729);
-  background-size: 600% 600%;
-  filter:brightness(5);
+  background-size: 800% 800%;
+  filter:brightness(10);
   animation: background-gradient 8s ease infinite;
 }
 
@@ -129,7 +129,7 @@ h1 {
     background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 0%;
+    background-position: 10% 10%;
   }
 }
 
@@ -162,7 +162,7 @@ h1 {
   margin: 1px;
 
 }
-#About{
+#About{ 
   background-color: #f18204d3;
   border-radius: 10px;
   
