@@ -17,7 +17,7 @@ body {
     border-radius: 10px;
     background-color: #f9f9f9;
     padding: 30px;
-    font-size: 20px;
+    font-size: 10px;
   }
   
   .chat-header {
@@ -66,7 +66,7 @@ body {
   .chat-messages {
       height: 300px;
       overflow-y: scroll;
-      padding: 1000px;
+      padding: 100px;
       
     }
   
@@ -82,10 +82,10 @@ body {
       background-color: #0084ff;
       color: #fff;
       text-align: right;
-      border-radius: 500% 500rem  ;
+      border-radius: 50% 500rem  ;
       margin-bottom: 10px;
       margin-top: 10px;
-      padding-right: 100px;
+      padding-right: 10px;
       margin-left: 100px;
   
       
