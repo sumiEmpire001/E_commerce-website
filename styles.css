@@ -42,7 +42,9 @@ body {
   color: red;
   border: 2px solid;
   padding: 10px;
-  margin: 10px ;
+  flex-direction:column;
+  display: flex;
+
   
 }
 
@@ -51,17 +53,18 @@ li{
   font-size:25px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 1px;
-  margin: 1px;
-  
+  margin: 5px 0;
+  list-style: none;
+
   
   
 }
 
 .cover {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
-  size-adjust: 100px;
+  size-adjust: 10px;
   
 }
 
