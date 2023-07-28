@@ -59,7 +59,7 @@ h5 {
   text-shadow: 4px 4px 4px rgba(163, 21, 21, 0.5);
   margin-left: -100px;
   font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", sans-serif;
-  font-weight: bold;
+  
 }
 h1 {
   color:rgb(2, 12, 0);
@@ -116,7 +116,7 @@ h1 {
   background-color: #5e2500;
   color: #130303;
   border: 5px solid #06862d;
-  margin-top:-70px;
+  margin-top:-10px;
   border-radius:100%;
   font-weight: bold;
   font-size: 16px;
