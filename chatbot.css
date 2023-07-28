@@ -1,5 +1,14 @@
 body {
     font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+
+
+  .navbar-brand{
+    color:  #881000;
+    font-size: 40px;
+    text-shadow: 4px 2px 4px rgb(46, 138, 6);
+
   }
   
   .container {
@@ -100,9 +109,11 @@ body {
     }
     .chat-input {
       width: 100%;
+      
       padding: 1px;
-      box-sizing:content-box;
+      box-sizing:border-box;
       border: none;
       border-top: 1px solid #ccc;
       outline: none;
+      font-weight: bold;
     }
