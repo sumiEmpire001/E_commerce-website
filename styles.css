@@ -36,7 +36,7 @@ li{
 
 .cover {
   position: relative;
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -112,8 +112,8 @@ h1 {
   position: center;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background: linear-gradient(1deg, #f43131, #f18304, #264588, #4e5c1a, #b1584f, #632e2e, #144441, #4b0729);
   background-size: 800% 800%;
