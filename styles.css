@@ -53,7 +53,7 @@ li{
   font-size:25px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 1px;
-  margin: 5px 0;
+  margin: 10px 10px;
   list-style: none;
 
   
@@ -90,10 +90,10 @@ h1 {
   color:rgb(2, 12, 0);
   font-size: 70px;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  text-shadow: 8px 4px 1px rgb(255, 3, 3);
+  text-shadow: 8px 4px 1px rgb(15, 0, 0);
   margin-bottom: 100px;
   margin-right: -100px;
-  font-weight: bold;
+  
 }
 
 .button-container {
@@ -141,7 +141,7 @@ h1 {
   background-color: #5e2500;
   color: #130303;
   border: 5px solid #06862d;
-  margin-top:-10px;
+  margin-top:-30px;
   border-radius:100%;
   font-weight: bold;
   font-size: 16px;
