@@ -250,7 +250,7 @@ if (lowerUserMessage.includes("about an empire")) {
   else if (
     lowerUserMessage.includes("done") ||
     lowerUserMessage.includes("end") ||
-    lowerUserMessage.includes("okay") ||
+    lowerUserMessage.includes("") ||
     lowerUserMessage.includes("thank you") ||
     lowerUserMessage.includes("thanks") ||
     lowerUserMessage.includes("it works") ||
@@ -276,6 +276,7 @@ if (lowerUserMessage.includes("about an empire")) {
       "Great job exploring Anempire! Should you need further assistance or want to discover more amazing products, feel free to come back anytime. Have a fabulous day!",
       "Thank you for your kind words! I'm delighted to be of service. Should you need anything else, don't hesitate to reach out. Have an awesome day!",
       "Goodbye, and happy shopping! Remember, I'm here to make your e-commerce experience extraordinary. See you again soon!",
+      
     ];
     const randomIndex = Math.floor(Math.random() * responses.length);
     return responses[randomIndex];

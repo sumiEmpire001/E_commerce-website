@@ -5,8 +5,8 @@ body {
 
 
   .navbar-brand{
-    color:  #881000;
-    font-size: 40px;
+    
+    font-size: 30px;
     text-shadow: 4px 2px 4px rgb(46, 138, 6);
 
   }
@@ -115,5 +115,5 @@ body {
       border: none;
       border-top: 1px solid #ccc;
       outline: none;
-      font-weight: bold;
+      
     }
