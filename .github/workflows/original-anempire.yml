@@ -13,4 +13,6 @@ jobs:
         with:
           node-version: '22'
       - run: node --check auth-flow.js
-      - run: node --test tests/original-flow.test.mjs
+      - run: node --check marketplace-data.mjs
+      - run: node --check marketplace-app.mjs
+      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs
