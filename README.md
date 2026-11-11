@@ -24,12 +24,12 @@ node --check storefront/catalog.mjs
 node --check storefront/app.mjs
 ```
 
-GitHub Actions runs these checks on pushes and pull requests. A green unit test result does **not** establish browser E2E, security or production readiness.
+Browser smoke tests also cover desktop and mobile Chromium, product filtering, cart persistence, sold-out products and the disabled checkout:\n\n```bash\ncd storefront\nnpm install --no-package-lock\nnpx playwright install chromium\nnpm run test:e2e\n```\n\nGitHub Actions runs unit, syntax and browser checks on pushes and pull requests. A green test result does **not** establish security or production readiness.
 
 ## Roadmap
 
 1. Storefront foundation and accessibility (in progress).
-2. Browser E2E and responsive regression checks.
+2. Browser E2E and responsive regression checks (added; CI verification pending).
 3. Authenticated buyer/seller accounts with secure backend authorization.
 4. Database-backed products, inventory, seller dashboard and order management.
 5. Verified server-side checkout, payment webhooks, refunds and audit logs.
