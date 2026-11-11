@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marketplace</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -9,7 +10,7 @@
 <body>
   <header class="header">
     <nav class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand" href="#">Marketplace</a>
+      <a class="navbar-brand" href="index.html">An Empire Marketplace</a>
       
 
       <div class="" id="navbarSupportedContent">
@@ -18,13 +19,13 @@
             <a class="nav-link" href="home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="#category-filter">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sellers</a>
+            <a class="nav-link" href="signup.html">Sellers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href="#cart-panel">Cart (<span id="cart-count">0</span>)</a>
           </li>
         </ul>
       </div>
@@ -35,6 +36,8 @@
     <div class="row">
       <div class="col-lg-3">
         <h4>Categories</h4>
+        <label for="category-filter">Browse categories</label>
+        <select class="form-control mb-3" id="category-filter"><option>All</option><option>Electronics</option><option>Fashion</option><option>Home &amp; Kitchen</option><option>Books</option><option>Toys &amp; Games</option></select>
         <ul class="list-group">
           <li class="list-group-item">Electronics</li>
           <li class="list-group-item">Fashion</li>
@@ -45,12 +48,16 @@
       </div>
       <div class="col-lg-9">
         <h2>Featured Products</h2>
+        <p class="text-muted">Sample listings for demonstration only. No real sellers, orders, or payments.</p>
+        <label for="product-search">Search products</label>
+        <input class="form-control mb-3" id="product-search" type="search" placeholder="Search featured products">
+        <p id="marketplace-status" role="status" aria-live="polite"></p>
         <div class="row" id="product-list"></div>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <section class="container my-4" id="cart-panel" aria-labelledby="cart-title"><h2 id="cart-title">Your demo cart</h2><ul class="list-group mb-3" id="cart-items"></ul><p><strong>Subtotal: <span id="cart-total">₦0</span></strong></p><button class="btn btn-secondary" disabled>Checkout unavailable — demo only</button></section>
+  <script type="module" src="marketplace-app.mjs"></script>
 </body>
 </html>
