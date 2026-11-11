@@ -1,0 +1,45 @@
+name: AnEmpire storefront checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  unit:
+    name: Unit and syntax checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/storefront.test.mjs
+      - run: |
+          node --check storefront/catalog.mjs
+          node --check storefront/app.mjs
+  browser:
+    name: Desktop and mobile Chromium
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: storefront
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test runner
+        run: npm install --no-package-lock --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser tests
+        run: npm run test:e2e
+      - name: Build allowlisted static assets
+        run: npm run build
+      - name: Confirm no source or test files in deployment output
+        run: |
+          test -f dist/index.html
+          test -f dist/catalog.mjs
+          test ! -e dist/package.json
+          test ! -e dist/e2e
+          test ! -e dist/node_modules
