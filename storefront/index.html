@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102a43"><meta name="description" content="AnEmpire storefront demonstration: explore products and try a local shopping cart.">
+<title>AnEmpire | Discover everyday essentials</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#products">Skip to products</a>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="./index.html" aria-label="AnEmpire home"><span class="brand-mark">A</span> AnEmpire</a><nav aria-label="Main navigation"><a href="#products">Shop</a><a href="#about">About</a></nav><button class="cart-toggle" id="cart-toggle" type="button" aria-controls="cart-panel" aria-expanded="false">Cart <span id="cart-count">0</span></button></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">THE EVERYDAY MARKETPLACE</p><h1>Good finds. Better everyday living.</h1><p>Discover thoughtful essentials for your style, space, and technology.</p><a class="primary-link" href="#products">Explore products <span aria-hidden="true">→</span></a></div><div class="hero-art" aria-hidden="true"><span>✦</span><div class="hero-circle">🛍️</div><small>Discover something new</small></div></div></section>
+<section class="wrap shop" id="products"><div class="section-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Explore our collection</h2><p class="muted">Sample products for a portfolio demonstration. No orders or payments are processed.</p></div></div><div class="filters"><label class="search-label" for="search">Search products<input id="search" type="search" placeholder="Try headphones or home…" autocomplete="off"></label><label for="category">Category<select id="category"><option>All</option><option>Fashion</option><option>Electronics</option><option>Home</option></select></label></div><div class="product-grid" id="product-grid"></div><p id="empty" class="empty" hidden>No products match your search. Try another term.</p></section>
+<section class="about" id="about"><div class="wrap about-inner"><div><p class="eyebrow">ABOUT ANEMPIRE</p><h2>Built for discovery</h2></div><p>This is the first step in rebuilding AnEmpire as a multi-vendor marketplace. The catalogue and cart currently run entirely in your browser. Secure accounts, sellers, inventory and checkout will be added in later phases.</p></div></section>
+</main>
+<aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title" hidden><div class="cart-header"><h2 id="cart-title">Your cart</h2><button type="button" id="cart-close" aria-label="Close cart">✕</button></div><div id="cart-items" class="cart-items"></div><div class="cart-footer"><div class="total"><span>Subtotal</span><strong id="subtotal">₦0</strong></div><p>Demo cart only — checkout is not yet available.</p><button class="checkout" type="button" disabled>Checkout coming soon</button></div></aside>
+<footer class="footer"><div class="wrap footer-inner"><strong>AnEmpire</strong><span>Portfolio demonstration · No real transactions</span><span>© <span id="year"></span> AnEmpire</span></div></footer>
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+<script type="module" src="./app.mjs"></script>
+</body></html>
