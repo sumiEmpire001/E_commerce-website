@@ -5,16 +5,32 @@ on:
 permissions:
   contents: read
 jobs:
-  tests:
+  unit:
+    name: Unit and syntax checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Run storefront unit tests
-        run: node --test tests/storefront.test.mjs
-      - name: Check JavaScript syntax
-        run: |
+      - run: node --test tests/storefront.test.mjs
+      - run: |
           node --check storefront/catalog.mjs
           node --check storefront/app.mjs
+  browser:
+    name: Desktop and mobile Chromium
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: storefront
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test runner
+        run: npm install --no-package-lock --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser tests
+        run: npm run test:e2e
