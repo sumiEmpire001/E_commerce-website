@@ -7,8 +7,8 @@ Vercel project: `anempire-marketplace` in team `AnEmpire`.
 - Git repository: `sumiEmpire001/E_commerce-website`
 - Root directory: `storefront`
 - Framework: Other / static
-- Output directory: `.`
-- Build command: none
+- Output directory: `dist`
+- Build command: `npm run build` (copies only allowlisted public assets)
 - Demo: `https://anempire-marketplace-an-empire.vercel.app/`
 
 The current deployment is a **sample-data storefront**, not a live transaction system. The team's Vercel Authentication protection may require a signed-in team member; do not assume public visitors can access it.
