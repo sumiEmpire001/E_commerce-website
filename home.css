@@ -83,3 +83,17 @@ body {
     text-decoration: none;
   }
   
+
+/* Small responsive refinements, preserving the original palette. */
+.navbar{gap:.5rem;padding:.75rem 1rem}
+.navbar-nav{gap:.2rem}
+.navbar-nav .nav-link{padding:.45rem .7rem}
+#account-controls{gap:.35rem}
+.card{border-radius:.65rem}
+@media(max-width:767px){
+ .share-post{padding:20px 0}
+ .card-body{padding:18px}
+ .footer-nav{flex-wrap:wrap;justify-content:center;gap:.35rem}
+ #account-controls{width:100%;justify-content:flex-start;margin-top:.4rem}
+ .navbar-nav .nav-link{font-size:.93rem}
+}
