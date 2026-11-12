@@ -9,17 +9,17 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand navbar-dark ">
+  <nav class="navbar navbar-expand-lg navbar-dark flex-wrap">
     <a class="navbar-brand" href="index.html">An Empire</a>
     
-    <div class=" " id="navbarNav">
-      <ul class="navbar-nav ml ">
+    <div class="d-flex flex-wrap align-items-center" id="navbarNav">
+      <ul class="navbar-nav flex-row flex-wrap">
 
         <li class="nav-item">
-          <a class="nav-link" href="marketplace.html">market place</a>
+          <a class="nav-link" href="marketplace.html">Marketplace</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chat.html">chat</a>
+          <a class="nav-link" href="chat.html">Chat</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="services.html">BAS</a>
@@ -27,8 +27,10 @@
         <li class="nav-item">
           <a class="nav-link" href="suppout.html">Customer care</a>
         </li>
+        <li class="nav-item"><a class="nav-link" href="seller.html">Seller Studio</a></li>
       </ul>
     </div>
+    <div id="account-controls" class="ml-auto d-flex align-items-center text-white"></div>
   </nav>
 
   <!-- Share Post Section -->
@@ -102,5 +104,6 @@
   </footer>
   <div id="instructions"></div>
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="session-ui.mjs"></script>
 </body>
 </html>
