@@ -21,7 +21,11 @@ test("sign-in cannot navigate directly to home through a submit link", () => {
 });
 test("authentication never falsely reports success without a backend", () => {
   const js = read("auth-flow.js");
-  assert.ok(js.includes("not yet available"));
+  assert.ok(js.includes("authReady()"));
+  assert.ok(js.includes("api.register"));
+  assert.ok(js.includes("api.login"));
   assert.ok(!js.includes("localStorage.setItem"));
   assert.ok(!js.includes("window.location.href"));
+  assert.ok(read("signin.html").includes("anempire-config.js"));
+  assert.ok(read("signup.html").includes("anempire-config.js"));
 });
