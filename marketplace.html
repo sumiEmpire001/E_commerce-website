@@ -9,12 +9,12 @@
 </head>
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap">
       <a class="navbar-brand" href="index.html">An Empire Marketplace</a>
       
 
-      <div class="" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+      <div class="d-flex flex-wrap" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-row flex-wrap">
           <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
           </li>
@@ -29,6 +29,7 @@
           </li>
         </ul>
       </div>
+      <div id="account-controls" class="ml-auto d-flex align-items-center"></div>
     </nav>
   </header>
 
@@ -59,5 +60,6 @@
 
   <section class="container my-4" id="cart-panel" aria-labelledby="cart-title"><h2 id="cart-title">Your demo cart</h2><ul class="list-group mb-3" id="cart-items"></ul><p><strong>Subtotal: <span id="cart-total">₦0</span></strong></p><button class="btn btn-secondary" disabled>Checkout unavailable — demo only</button></section>
   <script type="module" src="marketplace-app.mjs"></script>
+  <script type="module" src="session-ui.mjs"></script>
 </body>
 </html>
