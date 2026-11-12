@@ -39,26 +39,22 @@
         <h4>Categories</h4>
         <label for="category-filter">Browse categories</label>
         <select class="form-control mb-3" id="category-filter"><option>All</option><option>Electronics</option><option>Fashion</option><option>Home &amp; Kitchen</option><option>Books</option><option>Toys &amp; Games</option></select>
-        <ul class="list-group">
-          <li class="list-group-item">Electronics</li>
-          <li class="list-group-item">Fashion</li>
-          <li class="list-group-item">Home &amp; Kitchen</li>
-          <li class="list-group-item">Books</li>
-          <li class="list-group-item">Toys &amp; Games</li>
-        </ul>
+        <p class="small text-muted">Select a category above to filter products.</p>
       </div>
       <div class="col-lg-9">
         <h2>Featured Products</h2>
         <p class="text-muted">Sample listings for demonstration only. No real sellers, orders, or payments.</p>
         <label for="product-search">Search products</label>
         <input class="form-control mb-3" id="product-search" type="search" placeholder="Search featured products">
+        <div class="row align-items-end mb-3"><div class="col-sm-6 mb-2"><label for="product-sort">Sort products</label><select class="form-control" id="product-sort"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A–Z</option></select></div><div class="col-sm-6 mb-2"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="stock-only"><label class="custom-control-label" for="stock-only">Show available items only</label></div></div></div>
+        <p id="product-results" class="text-muted small" aria-live="polite"></p>
         <p id="marketplace-status" role="status" aria-live="polite"></p>
         <div class="row" id="product-list"></div>
       </div>
     </div>
   </div>
 
-  <section class="container my-4" id="cart-panel" aria-labelledby="cart-title"><h2 id="cart-title">Your demo cart</h2><ul class="list-group mb-3" id="cart-items"></ul><p><strong>Subtotal: <span id="cart-total">₦0</span></strong></p><button class="btn btn-secondary" disabled>Checkout unavailable — demo only</button></section>
+  <section class="container my-4" id="cart-panel" aria-labelledby="cart-title"><h2 id="cart-title">Your demo cart</h2><ul class="list-group mb-3" id="cart-items"></ul><p><strong>Subtotal: <span id="cart-total">₦0</span></strong></p><button type="button" class="btn btn-outline-danger btn-sm mb-3" id="clear-cart">Clear demo cart</button><button class="btn btn-secondary" disabled>Checkout unavailable — demo only</button></section>
   <script type="module" src="marketplace-app.mjs"></script>
   <script type="module" src="session-ui.mjs"></script>
 </body>
