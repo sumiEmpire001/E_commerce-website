@@ -61,14 +61,17 @@
               </div>
               
               <div class="stage" id="stage-3" style="display: none;">
-                <h3>Stage 3</h3>
+                <h3>Stage 3 — Account preferences</h3>
+                <div class="form-group"><label for="accountType">I am joining as</label><select class="form-control" id="accountType" name="accountType" required><option value="buyer">Buyer</option><option value="seller">Seller</option></select><small class="form-text text-muted">Seller accounts are not yet enabled. This selection only describes your intended use.</small></div>
+                <div id="seller-business-fields" hidden>
                 <div class="form-group">
                   <label for="businessType">Type of Business</label>
-                  <input type="text" class="form-control" id="businessType" placeholder="Enter the type of your business" required name="businessType">
+                  <input type="text" class="form-control" id="businessType" placeholder="Enter the type of your business" name="businessType">
                 </div>
                 <div class="form-group">
                   <label for="businessName">Business Name (optional)</label>
                   <input type="text" class="form-control" id="businessName" placeholder="Enter your business name" name="businessName">
+                </div>
                 </div>
                 <button type="button" class="btn btn-outline-secondary back-btn mr-2">Back</button><button type="button" class="btn btn-primary next-btn">Next</button>
               </div>
