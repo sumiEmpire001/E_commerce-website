@@ -25,3 +25,14 @@ export function cleanCart(cart) {
   return result;
 }
 export function total(cart){return products.reduce((sum,p)=>sum+(cart[p.id]||0)*p.price,0);}
+
+export const sortModes=Object.freeze(["featured","price-low","price-high","name"]);
+export function filterProducts(items,{query="",category="All",sort="featured",inStock=false}={}){
+ const needle=String(query).trim().toLowerCase();
+ const filtered=items.filter(p=>(category==="All"||p.category===category)&&(!inStock||p.stock>0)&&
+  (p.name.toLowerCase().includes(needle)||p.category.toLowerCase().includes(needle)));
+ if(sort==="price-low")filtered.sort((a,b)=>a.price-b.price);
+ else if(sort==="price-high")filtered.sort((a,b)=>b.price-a.price);
+ else if(sort==="name")filtered.sort((a,b)=>a.name.localeCompare(b.name));
+ return filtered;
+}
