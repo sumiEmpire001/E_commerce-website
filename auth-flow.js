@@ -11,6 +11,18 @@
     const indicators = [...signup.querySelectorAll(".stage-number")];
     const status = document.getElementById("signup-status");
     let current = 0;
+    const accountType=document.getElementById("accountType");
+    const businessFields=document.getElementById("seller-business-fields");
+    const businessType=document.getElementById("businessType");
+    function syncAccountType(){
+      const seller=accountType.value==="seller";
+      businessFields.hidden=!seller;
+      businessFields.style.display=seller?"block":"none";
+      businessType.required=seller;
+      if(!seller){businessType.value="";document.getElementById("businessName").value="";}
+    }
+    accountType.addEventListener("change",syncAccountType);
+    syncAccountType();
     function show(index) {
       current = index;
       stages.forEach((stage, i) => {
@@ -56,8 +68,8 @@
         const api=await apiPromise;
         if(!api.authReady())throw new Error(api.authConfigError());
         const response=await api.register({email:document.getElementById("email").value.trim(),password,username:document.getElementById("username").value.trim(),firstName:document.getElementById("firstName").value.trim(),lastName:document.getElementById("lastName").value.trim()});
-        status.textContent=response.access_token?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
         signup.reset();
+        syncAccountType();
         show(0);
         status.textContent=response.access_token?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
       } catch(error){status.textContent=error.message||"Registration failed. Please try again.";}finally{button.disabled=false;}
