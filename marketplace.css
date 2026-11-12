@@ -22,3 +22,19 @@ body {
     margin-bottom: 20px;
   }
   
+
+/* Minimal mobile polish within the existing Bootstrap layout. */
+.header{padding:8px 12px}
+.navbar{gap:.5rem}
+.navbar-nav{gap:.2rem}
+.navbar-nav .nav-link{padding:.4rem .65rem}
+#product-list .card{border-radius:.65rem;transition:box-shadow .15s ease}
+#product-list .card:hover{box-shadow:0 3px 14px rgba(0,0,0,.09)}
+#cart-items .list-group-item{cursor:default;gap:.5rem;flex-wrap:wrap}
+#cart-items button{min-width:32px}
+@media(max-width:767px){
+ .header{padding:5px}
+ #account-controls{width:100%;margin-top:.35rem}
+ .navbar-nav{flex-wrap:wrap}
+ #cart-items .list-group-item{align-items:flex-start!important}
+}
