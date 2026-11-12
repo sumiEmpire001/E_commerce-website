@@ -4,6 +4,7 @@
 (() => {
   "use strict";
   const signup = document.getElementById("signup-form");
+  const apiPromise = import("./auth-api.mjs");
   const signin = document.getElementById("signin-form");
   if (signup) {
     const stages = [...signup.querySelectorAll(".stage")];
@@ -36,7 +37,7 @@
     signup.querySelectorAll(".next-btn").forEach(button => button.addEventListener("click", () => {
       if (validStage(current) && current < stages.length - 1) show(current + 1);
     }));
-    signup.addEventListener("submit", event => {
+    signup.addEventListener("submit", async event => {
       event.preventDefault();
       if (!validStage(current)) return;
       const password = document.getElementById("password").value;
@@ -46,16 +47,33 @@
         document.getElementById("confirmPassword").focus();
         return;
       }
-      status.textContent = "Registration is not yet available. A secure account service must be connected before accounts can be created.";
+      const button=signup.querySelector('button[type="submit"]');
+      button.disabled=true;
+      try {
+        const api=await apiPromise;
+        if(!api.authReady())throw new Error(api.authConfigError());
+        const response=await api.register({email:document.getElementById("email").value.trim(),password,username:document.getElementById("username").value.trim(),firstName:document.getElementById("firstName").value.trim(),lastName:document.getElementById("lastName").value.trim()});
+        status.textContent=response.session?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
+        signup.reset();
+      } catch(error){status.textContent=error.message||"Registration failed. Please try again.";}finally{button.disabled=false;}
     });
     show(0);
   }
   if (signin) {
     const status = document.getElementById("signin-status");
-    signin.addEventListener("submit", event => {
+    signin.addEventListener("submit", async event => {
       event.preventDefault();
       if (!signin.reportValidity()) return;
-      status.textContent = "Sign in is not yet available. The secure account service has not been connected.";
+      const button=signin.querySelector('button[type="submit"]');
+      button.disabled=true;
+      try{
+        const api=await apiPromise;
+        if(!api.authReady())throw new Error(api.authConfigError());
+        const result=await api.login({email:document.getElementById("username").value.trim(),password:document.getElementById("password").value});
+        if(!result.access_token||!result.user)throw new Error("Sign-in response was incomplete.");
+        sessionStorage.setItem("anempire-session",JSON.stringify({access_token:result.access_token,expires_at:Date.now()+Number(result.expires_in||3600)*1000,user_id:result.user.id}));
+        window.location.assign("home.html");
+      }catch(error){status.textContent=error.message||"Sign in failed. Please try again.";}finally{button.disabled=false;}
     });
   }
 })();
