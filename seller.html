@@ -19,7 +19,7 @@
 <div class="form-group"><label for="seller-price">Price (NGN)</label><input class="form-control" id="seller-price" name="price" type="number" min="100" max="100000000" step="1" required></div>
 <div class="form-group"><label for="seller-stock">Available stock</label><input class="form-control" id="seller-stock" name="stock" type="number" min="0" max="100000" step="1" required></div>
 <div class="form-group"><label for="seller-description">Description</label><textarea class="form-control" id="seller-description" name="description" maxlength="500" rows="3"></textarea></div>
-<button type="submit" class="btn btn-primary">Save local draft</button>
+<button type="submit" class="btn btn-primary">Save local draft</button> <button type="button" class="btn btn-outline-secondary" id="cancel-edit" hidden>Cancel edit</button>
 <p id="seller-status" role="status" aria-live="polite" class="mt-2"></p>
 </form></div></div></section>
 <section class="col-lg-7" aria-labelledby="drafts-heading"><h2 class="h4" id="drafts-heading">Saved drafts <span id="draft-count">0</span></h2><div id="draft-list"></div><button id="clear-drafts" type="button" class="btn btn-outline-danger mt-3">Delete all local drafts</button></section>
