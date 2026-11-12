@@ -1,4 +1,4 @@
-import {products,naira,addToCart,cleanCart,total} from "./marketplace-data.mjs";
+import {products,naira,addToCart,cleanCart,total,filterProducts} from "./marketplace-data.mjs";
 const list=document.getElementById("product-list"),category=document.getElementById("category-filter"),search=document.getElementById("product-search"),cartList=document.getElementById("cart-items"),cartTotal=document.getElementById("cart-total"),notice=document.getElementById("marketplace-status");
 const key="anempire-original-demo-cart-v1";
 let cart={};
@@ -8,7 +8,8 @@ function element(tag,cls,value){const el=document.createElement(tag);if(cls)el.c
 function renderProducts(){
  list.replaceChildren();
  const query=search.value.trim().toLowerCase(),selected=category.value;
- const shown=products.filter(p=>(selected==="All"||p.category===selected)&&p.name.toLowerCase().includes(query));
+ const shown=filterProducts(products,{query,category:selected,sort:document.getElementById("product-sort").value,inStock:document.getElementById("stock-only").checked});
+ document.getElementById("product-results").textContent=shown.length+" of "+products.length+" sample products";
  if(!shown.length){list.append(element("p","col-12","No products match your search."));return;}
  for(const p of shown){
   const col=element("div","col-sm-6 col-xl-4 mb-3"),card=element("article","card h-100"),body=element("div","card-body");
@@ -38,4 +39,7 @@ function renderCart(){
 }
 function change(id,qty){if(qty<=0)delete cart[id];else cart[id]=Math.min(qty,products.find(p=>p.id===id).stock);save();renderCart();}
 category.addEventListener("change",renderProducts);search.addEventListener("input",renderProducts);
+document.getElementById("product-sort").addEventListener("change",renderProducts);
+document.getElementById("stock-only").addEventListener("change",renderProducts);
+document.getElementById("clear-cart").addEventListener("click",()=>{if(!Object.keys(cart).length)return;cart={};save();renderCart();notice.textContent="Demo cart cleared.";});
 renderProducts();renderCart();
