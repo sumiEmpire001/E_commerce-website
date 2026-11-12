@@ -37,9 +37,12 @@
     signup.querySelectorAll(".next-btn").forEach(button => button.addEventListener("click", () => {
       if (validStage(current) && current < stages.length - 1) show(current + 1);
     }));
+    signup.querySelectorAll(".back-btn").forEach(button=>button.addEventListener("click",()=>{if(current>0)show(current-1);}));
     signup.addEventListener("submit", async event => {
       event.preventDefault();
-      if (!validStage(current)) return;
+      for(let i=0;i<stages.length;i++){
+        if(!validStage(i)){show(i);validStage(i);return;}
+      }
       const password = document.getElementById("password").value;
       const confirm = document.getElementById("confirmPassword").value;
       if (password !== confirm) {
@@ -53,8 +56,10 @@
         const api=await apiPromise;
         if(!api.authReady())throw new Error(api.authConfigError());
         const response=await api.register({email:document.getElementById("email").value.trim(),password,username:document.getElementById("username").value.trim(),firstName:document.getElementById("firstName").value.trim(),lastName:document.getElementById("lastName").value.trim()});
-        status.textContent=response.session?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
+        status.textContent=response.access_token?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
         signup.reset();
+        show(0);
+        status.textContent=response.access_token?"Account created. You can now sign in.":"Registration submitted. Check your email if confirmation is required, then sign in.";
       } catch(error){status.textContent=error.message||"Registration failed. Please try again.";}finally{button.disabled=false;}
     });
     show(0);
