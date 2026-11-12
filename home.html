@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>E-Commerce Homepage</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -8,26 +9,28 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand navbar-dark ">
+  <nav class="navbar navbar-expand-lg navbar-dark flex-wrap">
     <a class="navbar-brand" href="index.html">An Empire</a>
     
-    <div class=" " id="navbarNav">
-      <ul class="navbar-nav ml ">
+    <div class="d-flex flex-wrap align-items-center" id="navbarNav">
+      <ul class="navbar-nav flex-row flex-wrap">
 
         <li class="nav-item">
-          <a class="nav-link" href="marketplace.html">market place</a>
+          <a class="nav-link" href="marketplace.html">Marketplace</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chat.html">chat</a>
+          <a class="nav-link" href="chat.html">Chat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">BAS</a>
+          <a class="nav-link" href="services.html">BAS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Customer care</a>
+          <a class="nav-link" href="suppout.html">Customer care</a>
         </li>
+        <li class="nav-item"><a class="nav-link" href="seller.html">Seller Studio</a></li>
       </ul>
     </div>
+    <div id="account-controls" class="ml-auto d-flex align-items-center text-white"></div>
   </nav>
 
   <!-- Share Post Section -->
@@ -38,6 +41,7 @@
           <div class="card">
             <div class="card-body">
               <h2>Share a Post</h2>
+              <p class="text-muted">Community posting will become available when accounts and moderation are connected. No content is uploaded or published yet.</p>
               <form id="post-form" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="post-type">Post Type:</label>
@@ -55,7 +59,7 @@
                   <label for="post-file">Upload File:</label>
                   <input type="file" class="form-control-file" id="post-file" name="post-file">
                 </div>
-                <button type="submit" class="btn btn-primary">Share</button>
+                <button type="submit" class="btn btn-primary" disabled>Posting coming soon</button>
               </form>
             </div>
           </div>
@@ -72,7 +76,7 @@
           <div class="card">
             <div class="card-body">
               <h2>Recent Posts</h2>
-              <div id="post-container"></div>
+              <div id="post-container"><p>Community posts will appear here when the service launches.</p></div>
             </div>
           </div>
         </div>
@@ -89,18 +93,17 @@
         </div>
         <div class="col-md-6">
           <ul class="footer-nav">
-            <li><a href="">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="marketplace.html">Shop</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="suppout.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
   </footer>
   <div id="instructions"></div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="session-ui.mjs"></script>
 </body>
 </html>

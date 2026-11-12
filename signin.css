@@ -69,3 +69,5 @@ body {
     text-decoration: underline;
   }
   
+/* Allow mobile keyboards and small screens to scroll. */
+body{overflow:auto}.container{height:auto;min-height:100vh;padding:24px 12px}.card{width:min(100%,520px)}.card-body{padding:clamp(20px,6vw,80px)}#signin-status{min-height:1.5em;color:#7d1923;font-weight:600}

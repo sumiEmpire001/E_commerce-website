@@ -84,3 +84,5 @@ label {
 .stage {
   display: block;
 }
+/* Preserve the original blue registration card while supporting phones. */
+.container{min-height:100vh;height:auto;padding:24px 12px}.card{width:min(100%,650px)}.card-body{padding:clamp(18px,5vw,40px)}.stage-number{width:28px;height:28px;line-height:28px}.stage[hidden]{display:none!important}#signup-status{min-height:1.5em;color:#7d1923;font-weight:600}

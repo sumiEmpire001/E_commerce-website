@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marketplace</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -8,26 +9,27 @@
 </head>
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand" href="#">Marketplace</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap">
+      <a class="navbar-brand" href="index.html">An Empire Marketplace</a>
       
 
-      <div class="" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+      <div class="d-flex flex-wrap" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-row flex-wrap">
           <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="#category-filter">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sellers</a>
+            <a class="nav-link" href="seller.html">Seller Studio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href="#cart-panel">Cart (<span id="cart-count">0</span>)</a>
           </li>
         </ul>
       </div>
+      <div id="account-controls" class="ml-auto d-flex align-items-center"></div>
     </nav>
   </header>
 
@@ -35,22 +37,25 @@
     <div class="row">
       <div class="col-lg-3">
         <h4>Categories</h4>
-        <ul class="list-group">
-          <li class="list-group-item">Electronics</li>
-          <li class="list-group-item">Fashion</li>
-          <li class="list-group-item">Home &amp; Kitchen</li>
-          <li class="list-group-item">Books</li>
-          <li class="list-group-item">Toys &amp; Games</li>
-        </ul>
+        <label for="category-filter">Browse categories</label>
+        <select class="form-control mb-3" id="category-filter"><option>All</option><option>Electronics</option><option>Fashion</option><option>Home &amp; Kitchen</option><option>Books</option><option>Toys &amp; Games</option></select>
+        <p class="small text-muted">Select a category above to filter products.</p>
       </div>
       <div class="col-lg-9">
         <h2>Featured Products</h2>
+        <p class="text-muted">Sample listings for demonstration only. No real sellers, orders, or payments.</p>
+        <label for="product-search">Search products</label>
+        <input class="form-control mb-3" id="product-search" type="search" placeholder="Search featured products">
+        <div class="row align-items-end mb-3"><div class="col-sm-6 mb-2"><label for="product-sort">Sort products</label><select class="form-control" id="product-sort"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A–Z</option></select></div><div class="col-sm-6 mb-2"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="stock-only"><label class="custom-control-label" for="stock-only">Show available items only</label></div></div></div>
+        <p id="product-results" class="text-muted small" aria-live="polite"></p>
+        <p id="marketplace-status" role="status" aria-live="polite"></p>
         <div class="row" id="product-list"></div>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <section class="container my-4" id="cart-panel" aria-labelledby="cart-title"><h2 id="cart-title">Your demo cart</h2><ul class="list-group mb-3" id="cart-items"></ul><p><strong>Subtotal: <span id="cart-total">₦0</span></strong></p><button type="button" class="btn btn-outline-danger btn-sm mb-3" id="clear-cart">Clear demo cart</button><button class="btn btn-secondary" disabled>Checkout unavailable — demo only</button></section>
+  <script type="module" src="marketplace-app.mjs"></script>
+  <script type="module" src="session-ui.mjs"></script>
 </body>
 </html>

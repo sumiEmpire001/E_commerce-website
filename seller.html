@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An Empire — Seller Studio</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-light bg-light"><a class="navbar-brand" href="index.html">An Empire</a><div class="navbar-nav"><a class="nav-item nav-link" href="marketplace.html">Marketplace</a><a class="nav-item nav-link" href="home.html">Home</a></div></nav>
+<main class="container py-4">
+<h1>Seller Studio</h1>
+<p class="alert alert-info"><strong>Local prototype:</strong> Drafts stay in this browser only. They are not published, visible to buyers, or stored in a seller account. Do not enter confidential information.</p>
+<div class="row">
+<section class="col-lg-5 mb-4" aria-labelledby="draft-heading"><div class="card"><div class="card-body">
+<h2 class="h4" id="draft-heading">Create product draft</h2>
+<form id="seller-form">
+<div class="form-group"><label for="seller-name">Product name</label><input class="form-control" id="seller-name" name="name" minlength="3" maxlength="80" required></div>
+<div class="form-group"><label for="seller-category">Category</label><select class="form-control" id="seller-category" name="category" required><option value="">Select category</option><option>Electronics</option><option>Fashion</option><option>Home &amp; Kitchen</option><option>Books</option><option>Toys &amp; Games</option></select></div>
+<div class="form-group"><label for="seller-price">Price (NGN)</label><input class="form-control" id="seller-price" name="price" type="number" min="100" max="100000000" step="1" required></div>
+<div class="form-group"><label for="seller-stock">Available stock</label><input class="form-control" id="seller-stock" name="stock" type="number" min="0" max="100000" step="1" required></div>
+<div class="form-group"><label for="seller-description">Description</label><textarea class="form-control" id="seller-description" name="description" maxlength="500" rows="3"></textarea></div>
+<button type="submit" class="btn btn-primary">Save local draft</button> <button type="button" class="btn btn-outline-secondary" id="cancel-edit" hidden>Cancel edit</button>
+<p id="seller-status" role="status" aria-live="polite" class="mt-2"></p>
+</form></div></div></section>
+<section class="col-lg-7" aria-labelledby="drafts-heading"><h2 class="h4" id="drafts-heading">Saved drafts <span id="draft-count">0</span></h2><div id="draft-list"></div><div class="my-3"><button id="export-drafts" type="button" class="btn btn-outline-primary mr-2 mb-2">Export draft backup</button><label for="import-drafts" class="d-block">Import a draft backup (JSON, up to 200 KB)</label><input type="file" id="import-drafts" class="form-control-file" accept=".json,application/json" aria-describedby="import-help"><small id="import-help" class="text-muted">Import replaces all drafts in this browser after confirmation. No file is uploaded.</small></div><button id="clear-drafts" type="button" class="btn btn-outline-danger mt-3">Delete all local drafts</button></section>
+</div>
+</main>
+<script type="module" src="seller-studio.mjs"></script>
+</body></html>

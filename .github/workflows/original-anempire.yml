@@ -1,0 +1,26 @@
+name: Original AnEmpire checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check session-state.mjs
+      - run: node --check session-ui.mjs
+      - run: node --check seller-data.mjs
+      - run: node --check seller-studio.mjs
+      - run: node --check chatbot.js
+      - run: node --check auth-flow.js
+      - run: node --check auth-api.mjs
+      - run: node --check auth-config.mjs
+      - run: node --check anempire-config.js
+      - run: node --check marketplace-data.mjs
+      - run: node --check marketplace-app.mjs
+      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs tests/chatbot.test.mjs tests/seller.test.mjs tests/session.test.mjs tests/buyer.test.mjs tests/signup-regression.test.mjs tests/account-type.test.mjs tests/seller-edit.test.mjs tests/seller-backup.test.mjs

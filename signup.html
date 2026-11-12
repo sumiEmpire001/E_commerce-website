@@ -1,7 +1,8 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign Up</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -14,17 +15,18 @@
         <div class="card">
           <div class="card-body">
             <h1 class="card-title">Welcome to an Empire</h1>
-            <form id="signup-form">
+            <form id="signup-form" novalidate>
+              <p id="signup-status" role="status" aria-live="polite"></p>
               <div class="stage" id="stage-1">
                 <h3>Stage 1</h3>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required name="email">
                   <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
                 <div class="form-group">
                   <label for="username">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                  <input type="text" class="form-control" id="username" placeholder="Enter your username" required name="username">
                 </div>
                 <button type="button" class="btn btn-primary next-btn">Next</button>
               </div>
@@ -33,60 +35,51 @@
                 <h3>Stage 2</h3>
                 <div class="form-group">
                   <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                  <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required name="firstName">
                 </div>
                 <div class="form-group">
                   <label for="lastName">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                  <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required name="lastName">
                 </div>
-                <div class="form-group">
-                  <label for="dob">Date of Birth</label>
-                  <input type="date" class="form-control" id="dob" required>
-                </div>
-                <div class="form-group">
-                  <label for="country">Country</label>
-                  <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
-                </div>
-                <div class="form-group">
-                  <label for="city">City</label>
-                  <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
-                </div>
-                <div class="form-group">
-                  <label for="postal">Postal Code</label>
-                  <input type="text" class="form-control" id="postal" placeholder="Enter your postal code" required>
-                </div>
-                <button type="button" class="btn btn-primary next-btn">Next</button>
+                
+                
+                <button type="button" class="btn btn-outline-secondary back-btn mr-2">Back</button><button type="button" class="btn btn-primary next-btn">Next</button>
               </div>
               
               <div class="stage" id="stage-3" style="display: none;">
-                <h3>Stage 3</h3>
+                <h3>Stage 3 — Account preferences</h3>
+                <div class="form-group"><label for="accountType">I am joining as</label><select class="form-control" id="accountType" name="accountType" required><option value="buyer">Buyer</option><option value="seller">Seller</option></select><small class="form-text text-muted">Seller accounts are not yet enabled. This selection only describes your intended use.</small></div>
+                <div id="seller-business-fields" hidden>
                 <div class="form-group">
                   <label for="businessType">Type of Business</label>
-                  <input type="text" class="form-control" id="businessType" placeholder="Enter the type of your business" required>
+                  <input type="text" class="form-control" id="businessType" placeholder="Enter the type of your business" name="businessType">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="businessName" placeholder="Enter your business name">
+                  <label for="businessName">Business Name (optional)</label>
+                  <input type="text" class="form-control" id="businessName" placeholder="Enter your business name" name="businessName">
                 </div>
-                <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+                <button type="button" class="btn btn-outline-secondary back-btn mr-2">Back</button><button type="button" class="btn btn-primary next-btn">Next</button>
               </div>
               
               <div class="stage" id="stage-4" style="display: none;">
                 <h3>Stage 4</h3>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password" required minlength="8">
                 </div>
                 <div class="form-group">
                   <label for="confirmPassword">Confirm Password</label>
-                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" name="confirmPassword" required minlength="8">
                 </div>
                 <div class="form-group">
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="agreeToTerms">
+                    <input type="checkbox" class="form-check-input" id="agreeToTerms" name="agreeToTerms" required>
                     <label class="form-check-label" for="agreeToTerms">I agree to the terms and conditions</label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block"> <a href="signin.html"> Submit</a></button>
+                <button type="button" class="btn btn-outline-secondary back-btn mb-2">Back</button>
+                <button type="submit" class="btn btn-primary btn-block">Create account</button>
               </div>
               
               <div class="stage-display">
@@ -102,6 +95,7 @@
     </div>
   </div>
   
-  <script src="script.js"></script>
+  <script src="anempire-config.js" defer></script>
+  <script src="auth-flow.js" defer></script>
 </body>
 </html>
