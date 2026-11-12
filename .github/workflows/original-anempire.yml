@@ -23,4 +23,4 @@ jobs:
       - run: node --check anempire-config.js
       - run: node --check marketplace-data.mjs
       - run: node --check marketplace-app.mjs
-      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs tests/chatbot.test.mjs tests/seller.test.mjs tests/session.test.mjs tests/buyer.test.mjs tests/signup-regression.test.mjs tests/account-type.test.mjs tests/seller-edit.test.mjs
+      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs tests/chatbot.test.mjs tests/seller.test.mjs tests/session.test.mjs tests/buyer.test.mjs tests/signup-regression.test.mjs tests/account-type.test.mjs tests/seller-edit.test.mjs tests/seller-backup.test.mjs
