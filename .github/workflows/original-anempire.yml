@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node --check session-state.mjs
+      - run: node --check session-ui.mjs
       - run: node --check seller-data.mjs
       - run: node --check seller-studio.mjs
       - run: node --check chatbot.js
@@ -21,4 +23,4 @@ jobs:
       - run: node --check anempire-config.js
       - run: node --check marketplace-data.mjs
       - run: node --check marketplace-app.mjs
-      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs tests/chatbot.test.mjs tests/seller.test.mjs
+      - run: node --test tests/original-flow.test.mjs tests/marketplace.test.mjs tests/chatbot.test.mjs tests/seller.test.mjs tests/session.test.mjs
