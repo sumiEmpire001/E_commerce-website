@@ -1,4 +1,4 @@
-import {draftKey,validateDraft,sanitizeDrafts} from "./seller-data.mjs";
+import {draftKey,validateDraft,sanitizeDrafts,createDraftBackup,parseDraftBackup} from "./seller-data.mjs";
 const form=document.getElementById("seller-form"),list=document.getElementById("draft-list"),status=document.getElementById("seller-status"),count=document.getElementById("draft-count");
 let drafts=[];
 let editingId=null;
@@ -51,5 +51,27 @@ document.getElementById("clear-drafts").addEventListener("click",()=>{
  if(!drafts.length)return;
  if(!confirm("Delete every local product draft on this device?"))return;
  const previous=drafts;drafts=[];if(!save())drafts=previous;else endEdit();render();
+});
+document.getElementById("export-drafts").addEventListener("click",()=>{
+ const blob=new Blob([JSON.stringify(createDraftBackup(drafts),null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const link=document.createElement("a");link.href=url;link.download="anempire-product-drafts.json";
+ document.body.append(link);link.click();link.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+ status.textContent="Local backup downloaded. No products were published.";
+});
+document.getElementById("import-drafts").addEventListener("change",async event=>{
+ const input=event.currentTarget,file=input.files?.[0];
+ if(!file)return;
+ try{
+  if(file.size>200000)throw new Error("Backup must be smaller than 200 KB.");
+  const incoming=parseDraftBackup(await file.text());
+  if(!confirm("Replace all existing local product drafts with "+incoming.length+" imported drafts?"))return;
+  const previous=drafts;drafts=incoming;
+  if(!save()){drafts=previous;return;}
+  endEdit();render();
+  status.textContent="Imported "+incoming.length+" local drafts. Not published to buyers.";
+ }catch(error){status.textContent=error.message||"Could not import backup.";}
+ finally{input.value="";}
 });
 render();
